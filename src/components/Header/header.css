@@ -1,0 +1,34 @@
+/*esta é a minha lista do cabeçario => header*/
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /*um item de cada lado*/
+    width: 100%;/*pega 100% da largura da tela*/
+    height: 60px; /*uma altura de 60px.;*/
+    background-color: brown; /*esta é a minha lista do cabeçario*/
+}
+
+.logo{
+    /*não quero que fique no sublinhado da letra*/
+    text-decoration: none;
+    /*tamanho da letra*/
+    font-size: 30px;
+    /*cor da letra */
+    color: #FFF;
+    /*cursor para ficar com a mãozinha*/
+    cursor: pointer;
+}
+
+.favoritos{
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #FFF;
+    /*border um pouco arredondada*/
+    border-radius: 5px;
+    /*espaçamento interno de 5px*/
+    padding: 5px;
+    /*font como bold negrito*/
+    font-weight: bold;
+    /*cor como preta da fonte*/
+    color: #000;
+}

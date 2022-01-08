@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './filme-info.css'
 import { useParams, useHistory } from 'react-router-dom';
 import api from '../../services/api';
+import {toast} from 'react-toastify';
 
 export default function Filme(){
   const { id } = useParams();
@@ -39,7 +40,7 @@ export default function Filme(){
     
   }, [history, id]);
 //#endregion
-  function salvarFilme(){
+  function salvaFilme(){
     /*vou no meu localStorage com o getItem e passo palavra chave (filmes)*/
     /*ele esta vindo em forma de texto, vou passar pa JSON na proxima linha*/
     const minhaLista = localStorage.getItem('filmes');
@@ -51,11 +52,11 @@ export default function Filme(){
     //se tiver um filme salvo com esse mesmo id precisa ignorar
     //esta função do JavaScript vai percorres o que tem dentro de (filmesSalvos e verificar se tem pelo meno 1 igual)
     //Lembrando que o (some do js da um retorno na variavel de um boolean então => ele vai colocar de da const hasFilme => true ou false)
-      const hasFilme = filmesSalvos.some((filmesSalvos) => filmesSalvos.id === filme.id)
+      const hasFilme = filmesSalvos.some( (filmeSalvos) => filmeSalvos.id === filme.id)
       
       /*estou verificando no localStorange se este filme já existir eu não armazeno e dou esta msg no alert e o return*/
       if(hasFilme){
-        alert('Você já possui esse filme salvo.')
+        toast.error('Você já possui esse filme salvo!');
         return;
       }
       /*caso não exista o filme no localStorage ai eu adiciono.*/
@@ -66,7 +67,7 @@ export default function Filme(){
        dou virgula e passo que eu quero realmente salvar => ele esta vindo em forma de array [] filmesSalvos, 
        NÂO POSSO SALVAR COMO ARRAY, => então dou um  JSON.stringify(filmesSalvos)) para salvar como TEXTO*/
       localStorage.setItem('filmes', JSON.stringify(filmesSalvos));
-      alert('Filme salvo com sucesso!');
+      toast.success('Filme salvo com sucesso!');
   }
 
   if(loading){
@@ -87,7 +88,7 @@ export default function Filme(){
 
          <div className="botoes">
            {/*armazenando no localStorage*/}
-            <button onClick={ salvarFilme } >Salvar</button>
+            <button onClick={ salvaFilme } >Salvar</button>
 
             <button>
               <a target="blank" href={`https://youtube.com/results?search_query=${filme.nome} Trailer`}>

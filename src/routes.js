@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import Home from './pages/Home';
 import Filme from "./pages/Filme";
+//1 - componente Favoritos => Já este outro é o caminho da pasta =>./pages/Favoritos
 import Favoritos from "./pages/Favoritos";
 
 

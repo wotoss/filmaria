@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import Home from './pages/Home';
 import Filme from "./pages/Filme";
+import Favoritos from "./pages/Favoritos";
 
 
 
@@ -14,6 +15,9 @@ const Routes = () => {
              {/* exact => só chama quando cair exatamente na rota home*/}
              <Route exact path="/" component={Home} />
              <Route exact path="/filme/:id" component={Filme} />
+             {/*quero que ele acesse /favoritos => quando eu passo exact ele acessa exatamente esta pagina => 
+             depois vai renderizar o componente Favoritos*/}
+             <Route exact path="/favoritos" component={Favoritos} />
          </Switch>
        </BrowserRouter> 
     )

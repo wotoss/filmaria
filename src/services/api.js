@@ -1,0 +1,15 @@
+import axios from "axios";
+
+//https://sujeitoprogramador.com/r-api/?api=filmes
+
+//vamos criar uma base url
+//Base URL > https://sujeitoprogramador.com/
+//r-api/?api=filmes  (todos os filmes)
+//r-api/?api=filmes/id  (filme com id 123)
+
+const api = axios.create({
+   baseURL: 'https://sujeitoprogramador.com'
+
+});
+
+export default api;

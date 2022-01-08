@@ -1,0 +1,43 @@
+.filme-info{
+    display: flex;
+    /*um embaixo do outro*/
+    flex-direction: column;
+    /*largura maxima de 900px que seria div */
+    max-width: 900px;
+}
+
+.filme-info button{
+    /*espaçamento a direita um do outro de 5px;*/
+    margin-right: 5px;
+    /*espaçamento do topo do texto ou da outra margem de 15px*/
+    margin-top: 15px;
+    /*mãozinha para clicar*/
+    cursor: pointer;
+    /*arredondar todos os lado do botão em 5px;*/
+    border-radius: 5px;
+    /*a fonte do botão 20px*/
+    font-size: 20px;
+    outline: none;
+    padding: 12px;
+    /*vamos fazer a transição de efeito dos botões*/
+    transition: all 0.5s;
+}
+/*evento do botão em hover, quando passar o mouse surge o efeito*/
+.filme-info button:hover{
+    /*ele fica todo vemelho neste momento*/
+    background-color: brown;
+    /*e com as letras branca*/
+    color: #FFF;
+}
+/*esta colocando a letra em branco buscando a forma do a link*/
+.filme-info a:hover{
+    color: #FFF;
+}
+
+.filme-info a{
+    /*para tirar o sublinhado do link*/
+    text-decoration: none;
+    /*toda a letra do dois botães em preto*/
+    color: #000;
+    transition: all 0.5s;
+}
